@@ -29,7 +29,7 @@ Users should be able to:
 
 ## My process
 
-I started with the frontend mentor challenge and redesigned it visually with my own illustration. I also added improvements for accessibility so that all dynamic changes are announced correctly for screen reader users. Any errors detected on submit are populated in an aria live region, where they are listed and linked to the relevant form field. The card details that are updated visually on the card as the user types are hidden from a screen reader to avoid audio clutter. 
+I started with the frontend mentor challenge and redesigned it visually with my own illustration. I also added improvements for accessibility so that all dynamic changes are announced correctly for screen reader users. Any errors detected on submit are populated in an aria live region, where they are listed and linked to the relevant form field. The card details that are updated visually on the card as the user types are hidden from a screen reader to avoid audio clutter. All interactive components can be interacted with using mouse, keyboard, or screen reader. 
 
 ### Built with
 
