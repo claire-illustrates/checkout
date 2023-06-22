@@ -1,0 +1,433 @@
+/* Utility Classes */
+
+/* Font sizes */
+
+.date-preview,
+.name-preview
+ {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.card-details {
+  font-size: 22.4px;
+  font-size: 1.4rem;
+}
+
+/* Flexbox */
+
+.cc-front-text,
+.credit-card-front,
+.credit-card-preview,
+.date-inputs,
+.input-element,
+.main,
+.month-input,
+.name-date,
+.thank-you-message,
+.year-input {
+  display: flex;
+}
+
+.cc-front-text,
+.credit-card-front,
+.credit-card-preview,
+.input-element,
+.month-input,
+.thank-you-message,
+.year-input {
+  flex-direction: column;
+}
+
+.credit-card-preview,
+.main,
+.name-date {
+  align-items: center;
+}
+
+.confirm-button,
+.credit-card-form,
+.date-cvc {
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: url(images/credit-card-page-bg-desktop.png) center/cover;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-heading,
+.notification-error,
+p,
+legend h2 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+.main {
+  justify-content: space-evenly;
+  padding: 10% 0;
+  position: relative;
+}
+
+.main-heading {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #F5907B;
+  font-size: 48px;
+  font-size: 3rem;
+  padding: 1.5%;
+}
+
+/* Credit Card Images */
+
+.credit-card-front,
+.credit-card-back {
+  border: 2px solid #000;
+  color: #000;
+  height: 190px;
+  width: 350px;
+}
+
+.credit-card-front {
+  background-color: #F5907B;
+  border-radius: 10px;
+  letter-spacing: .1rem;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  position: relative;
+  right: 10%;
+}
+
+.cc-front-text {
+  padding: 2%;
+}
+
+.credit-card-back {
+  background: url(images/credit-card-back.png) center/105%;
+  border-radius: 10px;
+  left: 10%;
+  position: relative;
+}
+
+.credit-card-back-img {
+  max-width: 100%;
+}
+
+.logo {
+  padding: 2%;
+  width: 20%;
+}
+
+.card-number-preview {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 2%;
+}
+
+.name-date {
+  justify-content: space-between;
+}
+
+.date-preview {
+  display: inline;
+}
+
+.cvc-preview {
+  color: #000;
+  position: absolute;
+  left: 80%;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  top: 15%;
+  width: 20%;
+  z-index: 2;
+}
+
+/* Form */
+
+.form-plus-errors {
+  width: 40%;
+}
+
+.form-div {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 5%;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 5%;
+}
+
+.input-element {
+  margin-bottom: 3%;
+}
+
+.form-label {
+  margin-bottom: 2%;
+}
+
+.form-control {
+  border: 2px solid #8e8792;
+  border-radius: 5px;
+  padding: 2%;
+}
+
+.form-control:focus {
+  background-color: #FBF0C4;
+  outline: 2px solid #000;
+}
+
+.date-inputs {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.month-input,
+.year-input {
+  width: 48%;
+}
+
+.confirm-button {
+  background-color: #F5907B;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  padding: 2%;
+}
+
+.confirm-button:focus {
+  outline: 3px solid #000;
+}
+
+/* Validation */
+
+.notifications {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 10%;
+  width: 80%;
+}
+
+.error-message {
+  color: #ff5252;
+  margin-top: 10px;
+}
+
+.invalid-input {
+  border: 2px solid #ff5252 !important;
+}
+
+.description {
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin-top: 10px;
+}
+
+/* Completed State */
+
+.thank-you-message {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  justify-content: center;
+  padding: 20% 10%;
+  text-align: center;
+}
+
+.complete-icon {
+  margin: 0 auto 5%;
+  width: 15%;
+}
+
+.thank-you {
+  font-size: 32px;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 2%;
+}
+
+.card-details {
+  color: #8e8792;
+}
+
+/* Media Queries  */
+
+@media (hover:hover) and (pointer:fine) {
+
+  .form-control:hover {
+    background-color: #FBF0C4;
+    border: 2px solid #000;
+  }
+
+  .confirm-button:hover {
+    background-color: #b7dad4;
+    cursor: pointer;
+    outline: 2px solid #000;
+  }
+
+}
+
+@media only screen and (max-width:992px) {
+
+  body {
+    background-image: url(images/credit-card-page-bg-mobile.png);
+    background-position: initial;
+  }
+
+  header {
+    margin-bottom: 5%;
+  }
+
+  .main {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 0;
+  }
+
+  .main-heading {
+    padding: 2%;
+  }
+
+  .credit-card-preview {
+    margin-bottom: 5%;
+    width: 70%;
+  }
+
+  .form-plus-errors {
+    width: 90%;
+  }
+
+  .form-div {
+    padding: 5%;
+  }
+
+  .credit-card-form {
+    width: auto;
+  }
+
+  .input-element {
+    margin-bottom: 2%;
+  }
+
+  .notifications {
+    margin: 0 auto 5%;
+    padding: 8% 0;
+  }
+
+  .notification-error, .error-list-ul {
+    margin-left: 5%;
+  }
+
+  .error-message {
+    width: auto;
+  }
+
+  .thank-you-message {
+    margin: auto;
+    padding: 10%;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width:688px) {
+
+  /* Utility Classes */
+
+  /* Font Sizes */
+
+  .card-number-preview,
+  .card-details {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .cvc-preview,
+  .date-preview,
+  .error-list-ul,
+  .name-preview {
+    font-size: 12px;
+    font-size: 0.75rem;
+  }
+
+  .main-heading {
+    font-size: 32px;
+    font-size: 2rem;
+    padding: 4%;
+  }
+
+  /* Credit Card Preview */
+
+  .credit-card-front,
+  .credit-card-back {
+    height: 126px;
+    width: 233px;
+  }
+
+  /* Form */
+
+  .form-div {
+    padding: 0;
+  }
+
+  .credit-card-form {
+    padding: 5%;
+    width: 90%;
+  }
+
+  .input-element {
+    font-size: 12.8px;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .confirm-button {
+    padding: 3%;
+  }
+
+  .error-message {
+    padding: 0 0 6%;
+    width: 90%;
+  }
+
+  #notifications {
+    width: auto;
+  }
+
+  /* Completed State */
+
+  .thank-you-message {
+    margin-top: 5%;
+    padding: 10% 5%;
+    width: 80%;
+  }
+
+  .thank-you {
+    font-size: 28px;
+    font-size: 1.75rem;
+    margin: 0 auto 5%;
+    width: 90%;
+  }
+
+  .complete-icon {
+    margin-bottom: 5%;
+    width: 15%;
+  }
+
+  .card-details {
+    margin: 0 auto 5%;
+    width: 90%;
+  }
+
+}

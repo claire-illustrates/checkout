@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <meta name="author" content="Claire Browne">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Interactive card details form Frontend Mentor</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Normalize -->
+  <link rel="stylesheet" href="normalize.css">
+
+  <!-- My Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <header role="banner">
+    <h1 class="main-heading">Checkout</h1>
+  </header>
+
+  <main class="main" role="main">
+
+    <!-- Credit Card Preview -->
+    <div class="credit-card-preview">
+      <div class="credit-card-front">
+        <img class="logo" src="images/card-logo.svg" alt="">
+        <div class="cc-front-text">
+          <p class="card-number-preview" aria-hidden="true">0000 0000 0000 0000</p>
+          <div class="name-date">
+            <p class="name-preview" aria-hidden="true">JANE APPLESEED</p>
+            <div class="expiration-date-preview">
+              <p class="date-preview date-preview-month" aria-hidden="true">00</p>
+              <p class="date-preview date-preview-slash" aria-hidden="true">/</p>
+              <p class="date-preview date-preview-year" aria-hidden="true">00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="credit-card-back">
+        <p class="cvc-preview" aria-hidden="true">000</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-plus-errors">
+
+      <div id="notifications" tabindex="-1"></div>
+
+      <div class="form-div">
+        <form class="credit-card-form" action="index.html" method="post" aria-label="Credit Card Details">
+
+          <fieldset>
+            <legend>
+              <h2 id="your-details">Your Details</h2>
+            </legend>
+            <div class="input-element">
+              <label for="name" class="form-label">NAME</label>
+              <input id="name" type="text" autocomplete="name" aria-describedby="name-error desc-name"
+                class="form-control">
+              <p class="description" id="desc-name">Give your first and last name.</p>
+              <p class="error-message description" id="name-error"></p>
+            </div>
+
+            <div class="input-element">
+              <label for="cardNumberInput" class="form-label">CARD NUMBER</label>
+              <input id="cardNumberInput" type="text" autocomplete="cc-number" class="form-control"
+                aria-describedby="number-error">
+              <p class="error-message description" id="number-error"></p>
+            </div>
+
+            <div class="input-element date-inputs">
+              <div class="month-input">
+                <label for="expDateMonth" class="form-label">EXP. DATE MONTH</label>
+                <input id="expDateMonth" type="text" autocomplete="cc-exp-month" class="form-control date-input"
+                  aria-describedby="month-error desc-month">
+                <p class="description" id="desc-month">Enter month in format 00.</p>
+                <p class="error-message description" id="month-error"></p>
+              </div>
+
+              <div class="year-input">
+                <label for="expDateYear" class="form-label">EXP. DATE YEAR</label>
+                <input id="expDateYear" type="text" class="form-control date-input" autocomplete="cc-exp-year"
+                  aria-describedby="year-error desc-year">
+                <p class="description" id="desc-year">Enter year in format 00.</p>
+                <p class="error-message description" id="year-error"></p>
+              </div>
+
+            </div>
+
+            <div class="input-element">
+              <label for="cvc" class="form-label">CVC</label>
+              <input id="cvc" type="text" inputmode="numeric" pattern="[0-9]*" class="form-control"
+                autocomplete="cc-csc" aria-describedby="cvc-error desc-cvc">
+              <p class="description" id="desc-cvc">Enter cvc in format 000.</p>
+              <p class="error-message description" id="cvc-error"></p>
+            </div>
+
+            <button class="confirm-button" id="submit" type="submit" name="submit" value="">Confirm</button>
+
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- jquery script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>
