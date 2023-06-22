@@ -267,7 +267,7 @@ fieldset {
 
   .form-control:hover {
     background-color: #FBF0C4;
-    border: 2px solid #000;
+    outline: 2px solid #000;
   }
 
   .confirm-button:hover {
