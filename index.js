@@ -138,14 +138,14 @@ $('.confirm-button').on('click', function (e) {
     notifications.addClass('thank-you-message');
     notifications.html(
       '<img class="complete-icon" src="images/icon-complete.svg" alt="">' +
-      '<h1 class="thank-you" role="alert">THANK YOU!</h1>' +
+      '<h1 class="thank-you">THANK YOU!</h1>' +
       '<p class="card-details" role="alert">Your card details have been added.</p>');
   } else {
 
     // Show Errors List
 
     notifications.html(
-      '<h3 class="notification-error"><span role="alert">There are errors in your form</span></h3>' + '<ul class="error-list-ul">' + nameError + monthError + yearError + ccNumError + cvcError + '</ul>');
+      '<h2 class="notification-error"><span role="alert">There are errors in your form</span></h2>' + '<ul class="error-list-ul">' + nameError + monthError + yearError + ccNumError + cvcError + '</ul>');
     notifications.addClass('notifications');
   }
 
