@@ -56,6 +56,7 @@ $('.confirm-button').on('click', function (e) {
 
   let error = false;
   let nameError = '';
+  let numberError = '';
   let monthError = '';
   let yearError = '';
   let cvcError = '';
@@ -74,26 +75,36 @@ $('.confirm-button').on('click', function (e) {
   yearErrorDescr.html('');
   cvcErrorDescr.html('');
 
-
+  // name field
   if (cardHolderName.val() === '') {
     error = true;
     nameError = '<li><a href="#name">Please enter your name.</a></li>';
     nameErrorDescr.html('Your name is missing.');
+    creditCardNum.addClass('invalid-input');
+  }
+
+  // card number
+
+  // Empty Field Warning
+  if (creditCardNum.val() === '') {
+    error = true;
+    numberError = '<li><a href="#cardNumberInput">Please enter your credit card number.</a></li>';
+    numberErrorDescr.html('Your credit card number is missing.');
     cardHolderName.addClass('invalid-input');
   }
 
-  // If letters are entered in the credit card number field show error message and invalid input styling
+    // Wrong Format Warning
+    var enteredNumber = creditCardNum.val();
+    if (isNaN(enteredNumber)) {
+      error = true;
+      ccNumError = '<li><a href="#cardNumberInput">Please enter a valid credit card number.</a></li>';
+      numberErrorDescr.html('Wrong format numbers only.');
+      creditCardNum.addClass("invalid-input");
+    }
 
-  var enteredNumber = creditCardNum.val();
-  if (isNaN(enteredNumber)) {
-    error = true;
-    ccNumError = '<li><a href="#cardNumberInput">Please enter a valid credit card number.</a></li>';
-    numberErrorDescr.html('Wrong format numbers only.');
-    creditCardNum.addClass("invalid-input");
-  }
+  // month
 
-  // If month is left blank show error message and invalid input styling
-
+  // Empty Field Warning
   if (month.val() === '') {
     error = true;
     monthError = '<li><a href="#expDateMonth">Please enter expiration date month.</a></li>';
@@ -101,8 +112,25 @@ $('.confirm-button').on('click', function (e) {
     month.addClass('invalid-input');
   }
 
-  // If year is left blank show error message and invalid input styling
+    // Format Warning
+    var enteredMonth = month.val();
+    var maxLength = 2;
+    if (isNaN(enteredMonth)) {
+      error = true;
+      monthError = '<li><a href="#expDateMonth">Please enter month in format 00.</a></li>';
+      monthErrorDescr.html('Wrong format numbers only.');
+      month.addClass("invalid-input");
+    }
+    if (enteredMonth > maxLength) {
+      error = true;
+      monthError = '<li><a href="#expDateMonth">Please enter month in format 00.</a></li>';
+      monthErrorDescr.html('Maximum of 2 characters can be entered.');
+      month.addClass("invalid-input");
+    }
 
+  // year
+
+  // Empty Field Warning
   if (year.val() === '') {
     error = true;
     yearError = '<li><a href="#expDateYear">Please enter expiration date year.</a></li>';
@@ -110,13 +138,46 @@ $('.confirm-button').on('click', function (e) {
     year.addClass('invalid-input');
   }
 
-  // If cvc is left blank show error message and invalid input styling
+  // Format Warning
+  var enteredYear = year.val();
+  var maxLength = 2;
+  if (isNaN(enteredYear)) {
+    error = true;
+    yearError = '<li><a href="#expDateYear">Please enter year in format 00.</a></li>';
+    yearErrorDescr.html('Wrong format numbers only.');
+    year.addClass("invalid-input");
+  }
+  if (enteredYear > maxLength) {
+    error = true;
+    yearError = '<li><a href="#expDateYear">Please enter year in format 00.</a></li>';
+    yearErrorDescr.html('Maximum of 2 characters can be entered.');
+    year.addClass("invalid-input");
+  }
 
+  // cvc
+
+  //Empty Field Warning
   if (cvc.val() === '') {
     error = true;
     cvcError = '<li><a href="#cvc">Please enter cvc.</a></li>';
     cvcErrorDescr.html('Cvc is missing.');
     cvc.addClass('invalid-input');
+  }
+
+  // Format Warning
+  var enteredCvc = cvc.val();
+  var maxLength = 3;
+  if (isNaN(enteredCvc)) {
+    error = true;
+    cvcError = '<li><a href="#cvc">Please enter cvc in format 000.</a></li>';
+    cvcErrorDescr.html('Wrong format numbers only.');
+    cvc.addClass("invalid-input");
+  }
+  if (enteredCvc > maxLength) {
+    error = true;
+    cvcError = '<li><a href="#cvc">Please enter cvc in format 000.</a></li>';
+    cvcErrorDescr.html('Maximum of 3 characters can be entered.');
+  cvc.addClass("invalid-input");
   }
 
   // If there's no errors
@@ -145,7 +206,7 @@ $('.confirm-button').on('click', function (e) {
     // Show Errors List
 
     notifications.html(
-      '<h2 class="notification-error"><span role="alert">There are errors in your form</span></h2>' + '<ul class="error-list-ul">' + nameError + monthError + yearError + ccNumError + cvcError + '</ul>');
+      '<h2 class="notification-error"><span role="alert">There are errors in your form</span></h2>' + '<ul class="error-list-ul">' + nameError + numberError + monthError + yearError + ccNumError + cvcError + '</ul>');
     notifications.addClass('notifications');
   }
 
