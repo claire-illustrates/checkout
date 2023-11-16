@@ -95,10 +95,17 @@ $('.confirm-button').on('click', function (e) {
 
     // Wrong Format Warning
     var enteredNumber = creditCardNum.val();
+    var numberLength = 12;
     if (isNaN(enteredNumber)) {
       error = true;
       ccNumError = '<li><a href="#cardNumberInput">Please enter a valid credit card number.</a></li>';
       numberErrorDescr.html('Wrong format numbers only.');
+      creditCardNum.addClass("invalid-input");
+    }
+    if (enteredNumber > numberLength) {
+      error = true;
+      numberError = '<li><a href="#cardNumberInput">Please enter a valid credit card number.</a></li>';
+      numberErrorDescr.html('Maximum of 12 characters can be entered.');
       creditCardNum.addClass("invalid-input");
     }
 
@@ -214,3 +221,4 @@ $('.confirm-button').on('click', function (e) {
   notifications.focus();
   return false;
 });
+
